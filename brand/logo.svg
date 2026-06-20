@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" role="img" aria-labelledby="title">
+  <title id="title">Perch Permits logo</title>
+  <defs>
+    <mask id="pp-logo-shield-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="white"/>
+      <path
+        fill="black"
+        fill-rule="evenodd"
+        d="M92 118h124c54 0 86 29 86 74s-32 74-86 74h-34v30h34v36H116v-36h24V160H92Zm92 42v64h30c26 0 42-12 42-32s-16-32-42-32Zm42-42h124c54 0 86 29 86 74s-32 74-86 74h-34v30h34v36H250v-36h24V160h-48Zm92 42v64h30c26 0 42-12 42-32s-16-32-42-32Z"/>
+      <rect x="150" y="356" width="212" height="4" rx="2" fill="black"/>
+    </mask>
+  </defs>
+  <g fill="#1b3a2d">
+    <g transform="translate(24 28) scale(0.390625)">
+      <path
+        mask="url(#pp-logo-shield-cutout)"
+        d="M42 44h428v206L256 474 42 250Z"/>
+    </g>
+    <text
+      x="272"
+      y="132"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="63"
+      font-weight="700"
+      letter-spacing="3"
+      dominant-baseline="middle">PERCH PERMITS</text>
+  </g>
+</svg>
