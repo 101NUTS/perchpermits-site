@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="brand/icon.svg">
-<title>Perch Permits — weekly permit leads for Nashville contractors</title>
-<meta name="description" content="A weekly report of every new building permit and upcoming zoning item in Nashville–Davidson County, organized for roofing, pool, and fence contractors. $49/month. Past issues in the archive.">
+<title>Perch Permits — public-records and home-improvement data tools for AI agents</title>
+<meta name="description" content="Nashville building permits joined to the licensed contractor, owner, sub-trade permits, and inspection stage. Kitchen and bath floor plans with cabinet takeoffs from a JSON spec. Pay per record on Apify Store, free credit to try.">
 <style>
   body { margin:0; font-family: Georgia, 'Times New Roman', serif; color:#222; background:#f4f3ef; line-height:1.55; }
   .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px 60px; }
@@ -16,16 +16,13 @@
   .btn { display:inline-block; background:#1b3a2d; color:#fff; text-decoration:none; padding: 14px 28px; border-radius: 6px; font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: bold; }
   .btn.secondary { background:#fff; color:#1b3a2d; border: 2px solid #1b3a2d; }
   .center { text-align:center; }
-  .excerpt { background:#fff; border:1px solid #ddd; border-radius:6px; padding: 18px 20px; font-size: 15px; }
-  .excerpt .tag { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight:bold; color:#9a6700; background:#fff3cd; border:1px solid #d8b94a; padding: 2px 8px; border-radius: 3px; display:inline-block; margin-bottom: 10px; }
-  .excerpt h3 { font-size: 15px; margin: 14px 0 6px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
-  .item { padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
-  .item:last-child { border-bottom: none; }
-  .val { color:#1b3a2d; font-weight: bold; }
+  .tool { background:#fff; border:1px solid #ddd; border-radius:6px; padding: 22px 24px; margin: 18px 0; }
+  .tool h3 { margin: 0 0 8px; font-size: 20px; }
+  .tool .price { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color:#1b3a2d; font-weight: bold; margin-bottom: 10px; }
+  .tool ul { margin: 8px 0 14px; }
   .meta { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color:#777; }
-  .price-box { background:#fff; border:1px solid #ddd; border-radius:6px; padding: 24px; text-align:center; }
-  .price-box .big { font-size: 40px; font-weight: bold; color:#1b3a2d; }
-  .founding { background:#eef6f0; border:1px solid #bcd8c6; border-radius:6px; padding: 18px 22px; margin-top: 14px; }
+  code { font-family: Consolas, Menlo, monospace; font-size: 14px; background:#eef2ee; padding: 1px 5px; border-radius: 3px; }
+  pre { background:#1b3a2d; color:#e8f1ec; padding: 14px 16px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
   ul { padding-left: 22px; }
   footer { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color:#666; border-top:1px solid #ddd; margin-top: 50px; padding-top: 18px; }
   a { color:#1b5a3a; }
@@ -36,61 +33,58 @@
 <header>
   <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:72px;display:block;margin:0 auto 12px;" aria-hidden="true" focusable="false"><defs><mask id="pp-shield-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><rect width="512" height="512" fill="white"/><path fill="black" fill-rule="evenodd" d="M92 118h124c54 0 86 29 86 74s-32 74-86 74h-34v30h34v36H116v-36h24V160H92Zm92 42v64h30c26 0 42-12 42-32s-16-32-42-32Zm42-42h124c54 0 86 29 86 74s-32 74-86 74h-34v30h34v36H250v-36h24V160h-48Zm92 42v64h30c26 0 42-12 42-32s-16-32-42-32Z"/><rect x="150" y="356" width="212" height="4" rx="2" fill="black"/></mask></defs><path fill="#fff" mask="url(#pp-shield-cutout)" d="M42 44h428v206L256 474 42 250Z"/></svg>
   <h1>PERCH PERMITS</h1>
-  <p>Every new building permit and upcoming zoning item in Nashville&ndash;Davidson County, in one short email every Monday morning. Built for roofing, pool, and fence contractors.</p>
+  <p>Clean, structured public-records and home-improvement data for AI agents and scripts. One call, one price, no accounts to set up.</p>
 </header>
 
 <div class="wrap">
 
-  <h2>What you get</h2>
-  <p>One email, every Monday by 6 AM, covering the prior week. Permits grouped by trade and sorted by dollar value, so the biggest jobs are at the top. A "future work radar" of new houses and subdivision plans before they break ground. And the full week's permit table as a spreadsheet (CSV) that opens in Excel or Google Sheets, or imports straight into the CRM you already run — JobNimbus, AccuLynx, Jobber, Housecall Pro. Five minutes on your phone and you know what moved in the county last week.</p>
-  <p>Permit search tools can show you what already happened. The radar section is the part nobody else does for Nashville: rezonings, subdivision plats, and new-construction permits — the work that breaks ground in three to twelve months, with the applicants named, while there's still time to be first in the door.</p>
-  <p>Issues also get posted to the <a href="issues/index.html">issue archive</a> on this site, so you can always look back at past weeks or check in between emails.</p>
+  <h2>The tools</h2>
 
-  <div class="excerpt">
-    <span class="tag">EXCERPT FROM THE SAMPLE ISSUE — fabricated example data</span>
-    <h3>Roofing leads</h3>
-    <div class="item">
-      <span class="val">$412,750</span> — <strong>720 MURFREESBORO PIKE</strong><br>
-      Re-roof existing warehouse, no structural changes.<br>
-      <span class="meta">Applicant: Apex Building Envelope LLC &middot; Issued 2026-06-05</span>
-    </div>
-    <div class="item">
-      <span class="val">$22,500</span> — <strong>4915 GRANNY WHITE PIKE</strong><br>
-      Re-roof and replace siding, storm damage repair.<br>
-      <span class="meta">Applicant: Belle View Exteriors LLC &middot; Issued 2026-06-03</span>
-    </div>
-    <h3>Future work radar</h3>
-    <div class="item">
-      <strong>2026S-114-001</strong> — 7800 block of Charlotte Pike, Bellevue<br>
-      Whispering Creek — preliminary plat, 48 single family lots on 22.1 acres.<br>
-      <span class="meta">Planning Commission, June 11 meeting &middot; 48 future yards, fences, and roofs</span>
-    </div>
+  <div class="tool">
+    <h3>Nashville Building Permits + Contractor, Owner &amp; Inspections</h3>
+    <div class="price">$0.02 per enriched record &middot; $0.002 per plain record &middot; $0.01 per ranked contractor</div>
+    <p>Metro Nashville publishes every permit as open data, but not the licensed contractor, the owner, which sub-trade permits are still outstanding, or how far inspections have progressed. This tool joins all four to every permit, and adds 22 scope presets that ignore the "not to add a second kitchen" boilerplate so a search for kitchen remodels returns kitchen remodels.</p>
+    <ul>
+      <li>Search by scope, keyword, address, parcel, ZIP, applicant, permit number, type, or declared cost</li>
+      <li>Issued permits and pending applications, refreshed daily from official sources</li>
+      <li>Rank contractors by permit count and valuation, with license numbers</li>
+      <li>Davidson County, Tennessee</li>
+    </ul>
+    <p class="center"><a class="btn" href="https://apify.com/perchpermits/nashville-building-permits">Open on Apify Store</a></p>
   </div>
-  <p class="center"><a class="btn secondary" href="issues/sample-report.html">Read the full sample issue — free</a></p>
 
-  <h2>Who it's for</h2>
-  <p>Nashville-area trade contractors and the people who estimate for them. The first issues are tuned for <strong>roofing, pool, and fence companies</strong>. If you do concrete, excavation, landscaping, or signs, the full table and the radar section still cover you, and dedicated sections for those trades are next.</p>
-
-  <h2>The price</h2>
-  <div class="price-box">
-    <div class="big">$49/month</div>
-    <div>Month-to-month, cancel anytime, no contract. Delivered by email every Monday, archived on this site. You're never billed for issues that don't arrive.</div>
-    <div class="founding">
-      <strong>Founding rate: $25/month for the first ten subscribers.</strong><br>
-      Locked in for as long as you stay subscribed &mdash; the price never goes up on you. One $25,000 re-roof or one pool dig pays for years of it.
-    </div>
+  <div class="tool">
+    <h3>Kitchen &amp; Bath Floor Plan + Cabinet Takeoff</h3>
+    <div class="price">$0.25 per plan</div>
+    <p>Describe a room in JSON: walls, windows, doorways, cabinet runs, appliances, island or peninsula. Get back a dimensioned floor plan (SVG), a cabinet takeoff in inches (CSV), and quote totals: linear feet of base, upper, and tall cabinets, countertop and backsplash square feet, appliance and fixture lists. Two seconds, no CAD.</p>
+    <ul>
+      <li>Metres, feet, or inches</li>
+      <li>Validates the layout and explains every error in plain words; invalid specs are never charged</li>
+      <li>Kitchens and bathrooms, including corner units, pantries, oven towers, vanities, tubs, and showers</li>
+    </ul>
+    <p class="center"><a class="btn" href="https://apify.com/perchpermits/kitchen-floor-plan-takeoff">Open on Apify Store</a></p>
   </div>
-  <p class="center" style="margin-top:18px;">
-    <a class="btn" href="https://buy.stripe.com/fZueV6cIU9Ef1Mt9ay9fW00">Become a founding subscriber — $25/month</a><br>
-    <span class="meta">Secure card checkout by Stripe. You'll get this week's issue with your first one. Founding-rate details are in the <a href="terms.html">terms</a>.</span>
-  </p>
 
-  <h2>How it's made</h2>
-  <p>Every issue is built from Metro Nashville's official public records — the county's permit database and Planning Commission agendas. Every record in every issue links back to its source. If a dollar amount or a name can't be confirmed from the record, it's marked "unverified," never guessed. Public information, organized and checked, every week.</p>
+  <h2>Try them free</h2>
+  <p>Both tools run on <a href="https://apify.com/perchpermits">Apify</a>. Every Apify account includes monthly free credit, enough for a few hundred enriched permit records or a couple of dozen floor plans, so you can test either tool before paying anything. Billing, receipts, and spend limits are handled by Apify.</p>
+
+  <h2>From code or from an agent</h2>
+  <pre>from apify_client import ApifyClient
+
+client = ApifyClient("YOUR_APIFY_TOKEN")
+run = client.actor("perchpermits/nashville-building-permits").call(
+    run_input={"scope": "kitchen", "residentialOnly": True, "enrich": True, "maxRecords": 50})
+for permit in client.dataset(run["defaultDatasetId"]).iterate_items():
+    print(permit["address"], permit["enrichment"]["contractor"]["company"])</pre>
+  <p>Any MCP-capable agent can call the tools through Apify's MCP server. The store page for each tool documents every input, every output field, and every error message, and is written for agents first.</p>
+  <p>Source code for both tools is public: <a href="https://github.com/101NUTS/perchpermits-actors">github.com/101NUTS/perchpermits-actors</a>.</p>
+
+  <h2>How the data is handled</h2>
+  <p>Everything comes from government public records: Metro Nashville's open data portal and the Metro ePermits public case search. Building permits are public records under Tennessee's Public Records Act. Nothing is scraped from private sites, no field is guessed (missing values are null), and sources are read politely at one request per second. If Metro changes a field, the tool stops rather than returning bad data.</p>
 
   <footer>
-    <p>Perch Permits republishes public permit data from Metro Nashville's open data portal and Planning Commission agendas.</p>
-    <p>Perch Permits &middot; Nashville, TN &middot; <a href="terms.html">Terms &amp; Conditions</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="issues/index.html">Issue archive</a></p>
+    <p>Perch Permits republishes public permit data from Metro Nashville's open data portal and ePermits. Support for either tool is through the Issues tab on its Apify Store page.</p>
+    <p>Perch Permits &middot; Nashville, TN &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="issues/index.html">Archive</a></p>
   </footer>
 
 </div>
