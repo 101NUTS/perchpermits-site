@@ -19,47 +19,41 @@
 </head>
 <body>
 <header>
-  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;display:block;margin:0 auto 10px;" aria-hidden="true" focusable="false"><defs><mask id="pp-shield-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><rect width="512" height="512" fill="white"/><path fill="black" fill-rule="evenodd" d="M92 118h124c54 0 86 29 86 74s-32 74-86 74h-34v30h34v36H116v-36h24V160H92Zm92 42v64h30c26 0 42-12 42-32s-16-32-42-32Zm42-42h124c54 0 86 29 86 74s-32 74-86 74h-34v30h34v36H250v-36h24V160h-48Zm92 42v64h30c26 0 42-12 42-32s-16-32-42-32Z"/><rect x="150" y="356" width="212" height="4" rx="2" fill="black"/></mask></defs><path fill="#fff" mask="url(#pp-shield-cutout)" d="M42 44h428v206L256 474 42 250Z"/></svg>
   <h1>PERCH PERMITS</h1>
   <p>Terms &amp; Conditions</p>
 </header>
 <div class="wrap">
-  <p class="updated">Effective date: June 12, 2026</p>
+  <p class="updated">Effective date: September 10, 2026. Replaces the terms dated June 12, 2026, which covered a weekly email subscription that is no longer offered.</p>
 
   <h2>1. What Perch Permits is</h2>
-  <p>Perch Permits is a weekly subscription report of building-permit and planning/zoning information for Nashville–Davidson County, Tennessee, compiled from government public records. It is delivered by email and archived on this website. By subscribing, you agree to these terms.</p>
+  <p>Perch Permits publishes data tools ("Actors") on the Apify platform. Each tool takes a request, returns structured data or files, and is billed per result. This website describes the tools and links to them; the tools themselves run on Apify. By using a Perch Permits tool you agree to these terms and to Apify's own terms for its platform and store.</p>
 
-  <h2>2. Subscriptions and billing</h2>
-  <p>Subscriptions are <strong>month-to-month</strong> with no contract and no prepayment beyond the current month. The standard price is <strong>$49 per month</strong>. Billing is handled by <a href="https://stripe.com">Stripe</a>, which acts as the merchant of record for your subscription: Stripe processes your payment, issues your receipt, and handles any payment-related questions or disputes. Perch Permits never sees or stores your card number. You can cancel at any time through the Stripe customer portal linked from your receipt, and cancellation takes effect at the end of the billing period you've already paid for.</p>
+  <h2>2. Billing</h2>
+  <p>All usage is billed by Apify under its pay-per-event pricing, at the prices shown on each tool's store page. Apify processes payment, issues receipts, and enforces any spend limit you set on a run. Perch Permits never sees your payment details. There are no subscriptions, contracts, or minimums. Runs that fail validation or that are stopped by a drift guard before producing results are not charged for those results.</p>
 
-  <h2>3. Founding rate</h2>
-  <p>The first ten subscribers receive the <strong>founding rate of $25 per month</strong>. The founding rate is a price guarantee, defined as follows:</p>
+  <h2>3. What the data is, and what it isn't</h2>
+  <p>The permits tool compiles government public records: Metro Nashville's open permit data and the Metro ePermits public case search. The floor-plan tool computes outputs from the specification you provide. In both cases:</p>
   <ul>
-    <li>It applies for as long as your subscription remains <strong>continuously active</strong>. Your price will not be raised while you stay subscribed.</li>
-    <li>If you cancel and later resubscribe, the then-current standard price applies.</li>
-    <li>The founding rate is a guarantee of <em>price</em>, not a guarantee that the service will be published forever (see section 6).</li>
+    <li>Perch Permits republishes what the government publishes. Errors in the underlying public record will appear in the output. Missing values are returned as null, never guessed.</li>
+    <li>Outputs are information, not advice, and are provided "as is" without warranty of any kind. Floor plans and takeoffs are planning aids, not construction documents; verify dimensions on site before ordering materials.</li>
+    <li>No outcome is guaranteed. The tools identify public activity or compute a layout; they do not promise any commercial result.</li>
+    <li>To the maximum extent permitted by law, Perch Permits's total liability for any claim related to the tools is limited to the amount you paid for the run that gave rise to the claim.</li>
   </ul>
 
-  <h2>4. What the data is, and what it isn't</h2>
-  <p>Every record in every issue is compiled from public government sources — Metro Nashville's open permit data and published planning agendas — and each record carries a reference to its source. Information that cannot be confirmed from the source record is marked "unverified," never guessed. However:</p>
-  <ul>
-    <li>Perch Permits republishes what the government publishes. Errors in the underlying public record will appear in the report.</li>
-    <li>The report is information, not advice, and is provided "as is" without warranty of any kind. It is not legal, financial, or professional advice.</li>
-    <li>No outcome is guaranteed. Perch Permits identifies public activity; it does not promise you will win any work from it.</li>
-    <li>To the maximum extent permitted by law, Perch Permits's total liability for any claim related to the service is limited to the amount you paid in the three months before the claim arose.</li>
-  </ul>
+  <h2>4. Acceptable use</h2>
+  <p>Use the outputs in your own products, research, and business. Do not use contact details in the data for unsolicited marketing where that is prohibited, and do not represent the outputs as originating from Metro Nashville or any government body. Do not resell raw output as a competing dataset.</p>
 
-  <h2>5. Acceptable use</h2>
-  <p>Your subscription is for your business. You may share an issue occasionally the way you'd share any newsletter, but redistributing every issue to non-subscribers, reselling the data, or scraping the archive defeats the thing you're paying for and is not permitted.</p>
+  <h2>5. Availability</h2>
+  <p>Tools may be updated, repriced, or withdrawn. Apify notifies users of price changes in advance and shows the current price on every store page. If a tool is withdrawn, it simply stops accepting runs; nothing is owed either way.</p>
 
-  <h2>6. If Perch Permits shuts down</h2>
-  <p>If publication is discontinued, billing stops immediately for all subscribers and the unused portion of any current billing period is refunded. You will never be charged for issues that don't arrive.</p>
+  <h2>6. Support</h2>
+  <p>Support is through the Issues tab on each tool's Apify Store page. Reported problems are read and fixed on a best-effort basis.</p>
 
   <h2>7. Changes and governing law</h2>
-  <p>These terms may be updated; material changes will be announced in the weekly issue before they take effect, and continued subscription after that constitutes acceptance. These terms are governed by the laws of the State of Tennessee.</p>
+  <p>These terms may be updated; the effective date above changes when they do. Continued use after a change constitutes acceptance. These terms are governed by the laws of the State of Tennessee.</p>
 
   <footer>
-    <p>Perch Permits &middot; Nashville, TN &middot; <a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="issues/index.html">Issue archive</a></p>
+    <p>Perch Permits &middot; Nashville, TN &middot; <a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="issues/index.html">Archive</a></p>
   </footer>
 </div>
 </body>
