@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="brand/icon.svg">
-<title>Perch Permits — public-records and home-improvement data tools for AI agents</title>
-<meta name="description" content="Nashville building permits joined to the licensed contractor, owner, sub-trade permits, and inspection stage. Kitchen and bath floor plans with cabinet takeoffs from a JSON spec. Pay per record on Apify Store, free credit to try.">
+<title>Perch Data — public-records, sports, and prediction-market data tools for AI agents</title>
+<meta name="description" content="Kalshi temperature markets joined to the NWS station that settles them. Tennis matches with 15+ bookmakers, form, and head-to-head. Nashville building permits joined to the licensed contractor. Kitchen floor plans with cabinet takeoffs. Pay per record on Apify Store, free credit to try.">
 <style>
   body { margin:0; font-family: Georgia, 'Times New Roman', serif; color:#222; background:#f4f3ef; line-height:1.55; }
   .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px 60px; }
@@ -32,13 +32,37 @@
 
 <header>
   <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:72px;display:block;margin:0 auto 12px;" aria-hidden="true" focusable="false"><defs><mask id="pp-shield-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><rect width="512" height="512" fill="white"/><path fill="black" fill-rule="evenodd" d="M92 118h124c54 0 86 29 86 74s-32 74-86 74h-34v30h34v36H116v-36h24V160H92Zm92 42v64h30c26 0 42-12 42-32s-16-32-42-32Zm42-42h124c54 0 86 29 86 74s-32 74-86 74h-34v30h34v36H250v-36h24V160h-48Zm92 42v64h30c26 0 42-12 42-32s-16-32-42-32Z"/><rect x="150" y="356" width="212" height="4" rx="2" fill="black"/></mask></defs><path fill="#fff" mask="url(#pp-shield-cutout)" d="M42 44h428v206L256 474 42 250Z"/></svg>
-  <h1>PERCH PERMITS</h1>
-  <p>Clean, structured public-records and home-improvement data for AI agents and scripts. One call, one price, no accounts to set up.</p>
+  <h1>PERCH DATA</h1>
+  <p>Clean, structured data for AI agents and scripts: prediction markets, sports, public records, and home improvement. One call, one price, no accounts to set up.</p>
 </header>
 
 <div class="wrap">
 
   <h2>The tools</h2>
+
+  <div class="tool">
+    <h3>Kalshi Weather Markets + NWS Station Data</h3>
+    <div class="price">$0.02 per enriched city-day ladder &middot; $0.002 per plain ladder</div>
+    <p>Every Kalshi daily high and low temperature market, one JSON row per city-day ladder with every strike, its prices, and the implied probability of each. Kalshi's rules name the National Weather Service station that settles each ladder; the row joins that exact station: observations recorded so far today, the daily and hourly forecast, the official climate report once issued, and which strike each of those lands on.</p>
+    <ul>
+      <li>24 US cities, high and low, today and tomorrow; settled ladders carry each strike's result and the settlement temperature</li>
+      <li>Market expected temperature, the favourite, and the forecast minus the market, ready for a model</li>
+      <li>Two official free APIs, nothing scraped; checked against 288 settlements with zero mismatches</li>
+    </ul>
+    <p class="center"><a class="btn" href="https://apify.com/perchpermits/kalshi-weather-markets-nws">Open on Apify Store</a></p>
+  </div>
+
+  <div class="tool">
+    <h3>Tennis Matches + Odds, Form &amp; Head-to-Head</h3>
+    <div class="price">$0.02 per enriched match &middot; $0.002 per plain match</div>
+    <p>ATP and WTA matches for any day, live or finished, one JSON row each: 15+ bookmakers' opening and current odds with the move since opening, margin-free implied probabilities, each player's last ten matches and surface record, rankings, and the full head-to-head. Schedule, results, or a live snapshot.</p>
+    <ul>
+      <li>Filter by tour, tournament, player, or status; up to 14 days ahead</li>
+      <li>Results mode with closing lines and scores, for a training set</li>
+      <li>Fails loudly and charges nothing if the source changes, instead of returning empty rows</li>
+    </ul>
+    <p class="center"><a class="btn" href="https://apify.com/perchpermits/tennis-matches-odds-form">Open on Apify Store</a></p>
+  </div>
 
   <div class="tool">
     <h3>Nashville Building Permits + Contractor, Owner &amp; Inspections</h3>
@@ -66,7 +90,7 @@
   </div>
 
   <h2>Try them free</h2>
-  <p>Both tools run on <a href="https://apify.com/perchpermits">Apify</a>. Every Apify account includes monthly free credit, enough for a few hundred enriched permit records or a couple of dozen floor plans, so you can test either tool before paying anything. Billing, receipts, and spend limits are handled by Apify.</p>
+  <p>All four tools run on <a href="https://apify.com/perchpermits">Apify</a>. Every Apify account includes monthly free credit, enough for a few hundred enriched ladders, matches, or permit records, or a couple of dozen floor plans, so you can test any tool before paying anything. Billing, receipts, and spend limits are handled by Apify.</p>
 
   <h2>From code or from an agent</h2>
   <pre>from apify_client import ApifyClient
@@ -77,14 +101,14 @@ run = client.actor("perchpermits/nashville-building-permits").call(
 for permit in client.dataset(run["defaultDatasetId"]).iterate_items():
     print(permit["address"], permit["enrichment"]["contractor"]["company"])</pre>
   <p>Any MCP-capable agent can call the tools through Apify's MCP server. The store page for each tool documents every input, every output field, and every error message, and is written for agents first.</p>
-  <p>Source code for both tools is public: <a href="https://github.com/101NUTS/perchpermits-actors">github.com/101NUTS/perchpermits-actors</a>.</p>
+  <p>Source code for all four tools is public: <a href="https://github.com/101NUTS/perchpermits-actors">github.com/101NUTS/perchpermits-actors</a>.</p>
 
   <h2>How the data is handled</h2>
-  <p>Everything comes from government public records: Metro Nashville's open data portal and the Metro ePermits public case search. Building permits are public records under Tennessee's Public Records Act. Nothing is scraped from private sites, no field is guessed (missing values are null), and sources are read politely at one request per second. If Metro changes a field, the tool stops rather than returning bad data.</p>
+  <p>Kalshi weather data comes from Kalshi's public trade API and api.weather.gov, both official free APIs. Tennis data comes from TennisExplorer's public pages on paths its robots.txt allows. Permit data comes from government public records: Metro Nashville's open data portal and the Metro ePermits public case search, public under Tennessee's Public Records Act. Nothing is scraped from private sites, no field is guessed (missing values are null), and sources are read politely with a fixed delay between requests. If a source changes its layout, the tool stops and charges nothing rather than returning bad data. Odds and market prices are listed prices at fetch time, for information only; check your local law before acting on them.</p>
 
   <footer>
-    <p>Perch Permits republishes public permit data from Metro Nashville's open data portal and ePermits. Support for either tool is through the Issues tab on its Apify Store page.</p>
-    <p>Perch Permits &middot; Nashville, TN &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="issues/index.html">Archive</a></p>
+    <p>Perch Data republishes public and publicly listed data; support for any tool is through the Issues tab on its Apify Store page.</p>
+    <p>Perch Data &middot; Nashville, TN &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="issues/index.html">Archive</a></p>
   </footer>
 
 </div>
