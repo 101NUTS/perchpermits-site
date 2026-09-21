@@ -1,46 +1,49 @@
 {
-  "$comment": "API catalog, RFC 9727. Served as application/linkset+json. Each anchor is one Apify actor: its store page is the service-doc, and every one is pay-per-event billed to the caller's own Apify account. Prices are the published per-event prices as of 2026-09-21.",
+  "$comment": "API catalog, RFC 9727. Served as application/linkset+json. Each anchor is one Apify actor: its store page is the service-doc, and every one is pay-per-event billed to the caller's own Apify account. Prices as of 2026-09-21. NOTE 2026-09-21: the two prediction-market actors were removed from this catalog pending written data-licence answers from Kalshi and Polymarket, whose terms restrict redistribution of their market data. They are not advertised here until that is settled.",
   "linkset": [
-    {
-      "anchor": "https://apify.com/perchpermits/kalshi-weather-markets-nws",
-      "service-doc": [
-        { "href": "https://apify.com/perchpermits/kalshi-weather-markets-nws", "title": "Kalshi daily temperature ladders joined to the NWS station named in the rules. $0.02 per city-day." }
-      ]
-    },
-    {
-      "anchor": "https://apify.com/perchpermits/polymarket-weather-markets-stations",
-      "service-doc": [
-        { "href": "https://apify.com/perchpermits/polymarket-weather-markets-stations", "title": "Polymarket daily temperature ladders joined to the airport station the market rules settle on, with the high or low recomputed as the rules read it. $0.02 per city-day." }
-      ]
-    },
     {
       "anchor": "https://apify.com/perchpermits/tennis-matches-odds-form",
       "service-doc": [
-        { "href": "https://apify.com/perchpermits/tennis-matches-odds-form", "title": "ATP and WTA matches for a day with opening and current odds from 15+ bookmakers, rankings, last-10 form, surface record and head-to-head. $0.02 per match." }
+        {
+          "href": "https://apify.com/perchpermits/tennis-matches-odds-form",
+          "title": "ATP and WTA matches for a day with opening and current odds from 15+ bookmakers, rankings, last-10 form, surface record and head-to-head. $0.02 per match."
+        }
       ]
     },
     {
       "anchor": "https://apify.com/perchpermits/nashville-building-permits",
       "service-doc": [
-        { "href": "https://apify.com/perchpermits/nashville-building-permits", "title": "Nashville and Davidson County TN building permits with licensed contractor, owner, open sub-trade permits and inspection stage. 22 scope presets. $0.02 per record." }
+        {
+          "href": "https://apify.com/perchpermits/nashville-building-permits",
+          "title": "Nashville and Davidson County TN building permits with licensed contractor, owner, open sub-trade permits and inspection stage. 22 scope presets. $0.02 per record."
+        }
       ]
     },
     {
       "anchor": "https://apify.com/perchpermits/kitchen-floor-plan-takeoff",
       "service-doc": [
-        { "href": "https://apify.com/perchpermits/kitchen-floor-plan-takeoff", "title": "Kitchen or bath floor plan (SVG), cabinet takeoff (CSV) and quote totals from one JSON room spec, with layout validation. $0.25 per plan." }
+        {
+          "href": "https://apify.com/perchpermits/kitchen-floor-plan-takeoff",
+          "title": "Kitchen or bath floor plan (SVG), cabinet takeoff (CSV) and quote totals from one JSON room spec, with layout validation. $0.25 per plan."
+        }
       ]
     },
     {
       "anchor": "https://apify.com/perchpermits/apify-store-trends",
       "service-doc": [
-        { "href": "https://apify.com/perchpermits/apify-store-trends", "title": "Apify Store demand by niche: users, runs, failure rate, rating, price, leader share and gap flags. $0.001 per actor row." }
+        {
+          "href": "https://apify.com/perchpermits/apify-store-trends",
+          "title": "Apify Store demand by niche: users, runs, failure rate, rating, price, leader share and gap flags. $0.001 per actor row."
+        }
       ]
     },
     {
       "anchor": "https://mcp.apify.com/",
       "service-desc": [
-        { "href": "https://perchpermits.com/.well-known/mcp/server-card.json", "title": "MCP server card: all six tools over streamable HTTP, caller authenticates with their own Apify account" }
+        {
+          "href": "https://perchpermits.com/.well-known/mcp/server-card.json",
+          "title": "MCP server card: the tools currently offered, over streamable HTTP, caller authenticates with their own Apify account"
+        }
       ]
     }
   ]

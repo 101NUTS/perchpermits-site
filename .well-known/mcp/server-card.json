@@ -3,14 +3,17 @@
   "serverInfo": {
     "name": "Perch Data",
     "version": "1.0.0",
-    "description": "Prediction-market, sports and public-records data joined to the official source that settles it. Kalshi and Polymarket daily temperature ladders joined to the weather station named in each market's own rules; ATP and WTA matches with odds, form and head-to-head; Nashville building permits with contractor and inspection data; kitchen floor-plan takeoffs; Apify Store demand by niche."
+    "description": "ATP and WTA matches with odds, form and head-to-head; Nashville building permits with contractor and inspection data; kitchen floor-plan takeoffs; Apify Store demand by niche. The two prediction-market tools are withheld as of 2026-09-21 pending written data-licence answers from Kalshi and Polymarket."
   },
   "transport": {
     "type": "streamable-http",
-    "url": "https://mcp.apify.com/?tools=fetch-actor-details,get-actor-output,perchpermits/kalshi-weather-markets-nws,perchpermits/polymarket-weather-markets-stations,perchpermits/tennis-matches-odds-form,perchpermits/nashville-building-permits,perchpermits/kitchen-floor-plan-takeoff,perchpermits/apify-store-trends"
+    "url": "https://mcp.apify.com/?tools=fetch-actor-details,get-actor-output,perchpermits/tennis-matches-odds-form,perchpermits/nashville-building-permits,perchpermits/kitchen-floor-plan-takeoff,perchpermits/apify-store-trends"
   },
   "authentication": {
-    "methods": ["oauth2", "bearer"],
+    "methods": [
+      "oauth2",
+      "bearer"
+    ],
     "note": "OAuth on first connect, or send Authorization: Bearer <APIFY_TOKEN>. Tokens come from https://console.apify.com/account/integrations and are the caller's own."
   },
   "capabilities": {
