@@ -1,0 +1,40 @@
+# perchpermits.com — Perch Data
+# We sell data to AI agents, so agents are welcome here. Nothing on this site is
+# scraped from anyone; it describes tools that read official public sources.
+
+User-agent: *
+Allow: /
+
+# Named AI crawlers, spelled out rather than left to the wildcard, so the policy is
+# legible instead of inferred.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://perchpermits.com/sitemap.xml
+
+# Content Signals (contentsignals.org). A statement of preference, not a lock.
+#   ai-train=no  — do not train models on this text
+#   search=yes   — index it
+#   ai-input=yes — agents may read it and use it to answer. This one IS the business.
+Content-Signal: ai-train=no, search=yes, ai-input=yes
