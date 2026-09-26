@@ -1,6 +1,6 @@
 # perchpermits.com — Perch Data
-# We sell data to AI agents, so agents are welcome here. Nothing on this site is
-# scraped from anyone; it describes tools that read official public sources.
+# Perch Data closed on 2026-09-21. Agents are still welcome to read this page.
+# Nothing on this site is scraped from anyone.
 
 User-agent: *
 Allow: /
